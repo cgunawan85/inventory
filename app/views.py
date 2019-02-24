@@ -14,6 +14,8 @@ def add_product(request):
     if request.method == 'POST':
         form = AddProductForm(request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.created_by = request.user
             form.save()
             messages.success(request, 'Product added!')
             return HttpResponseRedirect(reverse('app:home'))

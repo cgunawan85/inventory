@@ -7,3 +7,4 @@ class AddProductForm(ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+        exclude = ('created_by', )
