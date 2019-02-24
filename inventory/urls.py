@@ -22,6 +22,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('app/', include(('app.urls', 'app'), namespace='app')),
     path('', views.home, name='home'),
     path('users/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
