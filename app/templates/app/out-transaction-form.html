@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add product</title>
+    <title>Out Transaction Form</title>
 </head>
 <body>
+    <p>Out Transaction Form</p>
     <form method="post">
         {{ form.as_p }}
         {% csrf_token %}
-        <button type="submit">Add product</button>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

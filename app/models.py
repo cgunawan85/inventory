@@ -13,6 +13,8 @@ class Warehouse(models.Model):
 
 class Vendor(models.Model):
     name = models.CharField(max_length=255)
+    pic_first_name = models.CharField(max_length=255, blank=True, null=True)
+    pic_last_name = models.CharField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
