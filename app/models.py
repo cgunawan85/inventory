@@ -15,6 +15,7 @@ class Vendor(models.Model):
     name = models.CharField(max_length=255)
     pic_first_name = models.CharField(max_length=255, blank=True, null=True)
     pic_last_name = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
@@ -53,7 +54,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' in ' + str(self.warehouse)
 
 
 class InTransaction(models.Model):

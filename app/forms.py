@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from .models import Product, InTransaction, OutTransaction
+from .models import Product, InTransaction, OutTransaction, Vendor
 
 
 class AddProductForm(ModelForm):
@@ -8,6 +8,12 @@ class AddProductForm(ModelForm):
         model = Product
         fields = '__all__'
         exclude = ('created_by', )
+
+
+class AddVendorForm(ModelForm):
+    class Meta:
+        model = Vendor
+        fields = '__all__'
 
 
 class InTransactionForm(ModelForm):

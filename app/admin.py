@@ -9,7 +9,7 @@ class WarehouseAdmin(admin.ModelAdmin):
 
 class VendorAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', )
-    list_display = ('name', 'created_at', )
+    list_display = ('name', 'pic_first_name', 'pic_last_name', 'email', 'created_at', )
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -24,12 +24,12 @@ class ProductAdmin(admin.ModelAdmin):
 
 class InTransactionAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', )
-    list_display = ('product', 'quantity', )
+    list_display = ('product', 'quantity', 'created_at', )
 
 
 class OutTransactionAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', )
-    list_display = ('product', 'quantity', )
+    list_display = ('product', 'quantity', 'created_at', )
 
 
 admin.site.register(Warehouse, WarehouseAdmin)
